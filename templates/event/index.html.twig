@@ -11,8 +11,9 @@
                     <p class="card-text">{{ event.description }}</p>
                     <p class="card-text">{{ event.eventDate ? event.eventDate|date('Y-m-d H:i:s') : '' }}</p>
                     <p class="card-text">{{ event.location }}</p>
-                    <a class="btn btn-outline-success" href="{{ path('app_event_show', {'id': event.id}) }}">Show</a>
+                    <a class="btn btn-outline-success" href="{{ path('app_event_show', {'id': event.id}) }}">Details</a>
                     <a class="btn btn-outline-warning" href="{{ path('app_event_edit', {'id': event.id}) }}">Edit</a>
+                    <a class="btn btn-outline-danger" href="{{ path('app_event_delete', {'id': event.id}) }}">Delete</a>
                 </div>
             </div>
         </div>
