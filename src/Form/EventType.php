@@ -19,6 +19,7 @@ class EventType extends AbstractType
             ->add('picture', null, array("attr"=>["class"=>"form-control mb-3"]))
             ->add('capacity', null, array("attr"=>["class"=>"form-control mb-3"]))
             ->add('mail', null, array("attr"=>["class"=>"form-control mb-3"]))
+            ->add('phone', null, array("attr"=>["class"=>"form-control mb-3"]))
             ->add('location', null, array("attr"=>["class"=>"form-control mb-3"]))
             ->add('event_url', null, array("attr"=>["class"=>"form-control mb-3"]))
         ;
