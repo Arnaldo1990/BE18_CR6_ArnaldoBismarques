@@ -12,15 +12,15 @@ class EventType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('name')
-            ->add('event_date')
-            ->add('description')
-            ->add('picture')
-            ->add('capacity')
-            ->add('mail')
-            ->add('location')
-            ->add('phone')
-            ->add('event_url')
+            ->add('name', null, array("attr"=>["class"=>"form-control mb-2"]))
+            ->add('event_date', null, array("attr"=>["class"=>"form-control mb-3"]))
+            ->add('description', null, array("attr"=>["class"=>"form-control mb-3"]))
+            ->add('picture', null, array("attr"=>["class"=>"form-control mb-3"]))
+            ->add('capacity', null, array("attr"=>["class"=>"form-control mb-3"]))
+            ->add('mail', null, array("attr"=>["class"=>"form-control mb-3"]))
+            ->add('location', null, array("attr"=>["class"=>"form-control mb-3"]))
+            ->add('phone', null, array("attr"=>["class"=>"form-control mb-3"]))
+            ->add('event_url', null, array("attr"=>["class"=>"form-control mb-3"]))
         ;
     }
 
