@@ -19,7 +19,7 @@ class EventController extends AbstractController
     {
         $events = $doctrine->getRepository(Event::class)->findAll();
         return $this->render('event/index.html.twig', [
-            'events' => $eventRepository->findAll(),
+            "events" => $events
         ]);
     }
 
