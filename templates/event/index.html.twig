@@ -9,7 +9,7 @@
                 <img src="{{event.picture}}" class="card-img-top" alt="{{ event.name }}">
                 <div class="card-body">
                     <p class="card-text">{{ event.name }}</p>
-                    <p class="card-text">{{ event.description }}</p>
+                    <p class="card-subtitle mb-2 text-body-secondary">{{ event.description }}</p>
                     <p class="card-text">{{ event.eventDate ? event.eventDate|date('Y-m-d H:i:s') : '' }}</p>
                     <p class="card-text">{{ event.location }}</p>
                     <a class="btn btn-outline-success" href="{{ path('app_event_show', {'id': event.id}) }}">Details</a>
