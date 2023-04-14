@@ -68,13 +68,27 @@ class EventController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_event_delete', methods: ['POST'])]
-    public function delete(Request $request, Event $event, EventRepository $eventRepository): Response
-    {
-        if ($this->isCsrfTokenValid('delete'.$event->getId(), $request->request->get('_token'))) {
-            $eventRepository->remove($event, true);
-        }
+//     #[Route('/delete{id}', name: 'app_event_delete', methods: ['POST'])]
+//     public function delete(Request $request, Event $event, EventRepository $eventRepository): Response
+//     {
+//         if ($this->isCsrfTokenValid('delete'.$event->getId(), $request->request->get('_token'))) {
+//             $eventRepository->remove($event, true);
+//         }
 
-        return $this->redirectToRoute('app_event_index', [], Response::HTTP_SEE_OTHER);
-    }
+//         return $this->redirectToRoute('app_event_index', [], Response::HTTP_SEE_OTHER);
+//     }
+// }
+
+#[Route('/delete/{id}', name: 'app_event_delete')]
+public function delete(ManagerRegistry $doctrine, $id): Response
+{
+    $event = $doctrine->getRepository(Event::class)->find($id);
+    $em = $doctrine->getManager();
+
+    $em->remove($event);
+    $em->flush();
+    
+    return $this->redirectToRoute('app_event_index', [], Response::HTTP_SEE_OTHER);
+    
+}
 }
