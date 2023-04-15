@@ -9,3 +9,11 @@ h1 {
 .navbar {
     font-family: 'Sedgwick Ave Display', cursive;
 }
+
+#hero {
+    width: 100%;
+    height: 100vh;
+    background: url("https://lh4.googleusercontent.com/4vHMt_CoJMcUtyThd1JpOd-8EC7Rx13ruETG4I7j57hVdda7L7RF-j6ONpC_rqCAzR1A3BOT368kzqG5ow3v4G12IqCWqSDaLSakZrL9TGAg1e2qUP-dbLg0wDo-ydYY6qAIpv92=s0") top right no-repeat;
+    background-size: cover;
+    position: relative;
+}
