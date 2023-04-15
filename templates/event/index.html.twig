@@ -1,6 +1,8 @@
 {% extends 'base.html.twig' %} {% block title %}Events in Austria index{% endblock %} {% block stylesheets %}
 <link rel="stylesheet" href="{{ asset("css/style.css") }}"> {% endblock %} {% block body %}
 
+
+<section id="hero" class="d-flex flex-column justify-content-center">
 <div class="container">
     <h1 class="text-center" id="eventheading" >Events in Austria</h1>
     <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
@@ -15,13 +17,14 @@
                     <p class="card-text">{{ event.location }}</p>
                     <a class="btn btn-outline-success" href="{{ path('app_event_show', {'id': event.id}) }}">Details</a>
                     <a class="btn btn-outline-warning" href="{{ path('app_event_edit', {'id': event.id}) }}">Edit</a>
-                    <a class="btn btn-outline-danger" href="{{ path('app_event_delete', {'id': event.id}) }}" onclick="return confirm('Are you sure you want to delete this?')">Delete</a>
+                    <a class="btn btn-outline-danger" href="{{ path('app_event_delete', {'id': event.id}) }}" onclick="return confirm('Are you sure you want to delete this event?')">Delete</a>
                 </div>
             </div>
         </div>
         {% endfor %}
     </div>
 </div>
+</section>
 
 
 
